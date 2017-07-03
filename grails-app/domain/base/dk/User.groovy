@@ -32,6 +32,7 @@ class User implements Serializable {
 	}
 
 	protected void encodePassword() {
+		// @TODO : Bug here for some reason springSecurityService is null
 		//assert springSecurityService
 		password = springSecurityService?.passwordEncoder ? springSecurityService.encodePassword(password) : password
 	}
