@@ -6,11 +6,10 @@ import groovy.transform.ToString
 @EqualsAndHashCode(includes='username')
 @ToString(includes='username', includeNames=true, includePackage=false)
 class User implements Serializable {
-
-	private static final long serialVersionUID = 1
-
 	transient springSecurityService
 
+	private static final long serialVersionUID = 1
+	
 	String username
 	String password
 	boolean enabled = true
@@ -33,6 +32,7 @@ class User implements Serializable {
 	}
 
 	protected void encodePassword() {
+		//assert springSecurityService
 		password = springSecurityService?.passwordEncoder ? springSecurityService.encodePassword(password) : password
 	}
 
