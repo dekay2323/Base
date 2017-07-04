@@ -10,11 +10,14 @@ dekay.2323@gmail.com
 * MySql
 * Spring Security, annotations
 * Mail
+* Bootstrap 4
+* Vue.js instead of JQuery https://bootstrap-vue.js.org/docs
 
 ## Examples
 * Users
   * **Role.groovy**, **User.groovy**, **UserRole.groovy** domain
   * Bootstrapped User (user/user) **BootStrap.groovy**
     * User and Admin roles
+*
     
     
