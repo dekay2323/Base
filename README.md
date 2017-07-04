@@ -8,6 +8,7 @@ dekay.2323@gmail.com
 ## Plugins
 * Hibernate
 * MySql
+* H2 (in memory or file)
 * Spring Security, annotations
 * Mail
 * Bootstrap 4 http://bootstrap4.guide/
