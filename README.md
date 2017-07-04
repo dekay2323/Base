@@ -24,8 +24,9 @@ dekay.2323@gmail.com
 * Users
   * **Role.groovy**, **User.groovy**, **UserRole.groovy** domain
   * Bootstrapped User (user/user) **BootStrap.groovy**
-    * User and Admin roles
-* Vue sent REST via
+    * User and Admin roles 
+* Obtaining data from REST grails domain via *myVue.js*
   * https://github.com/mzabriskie/axios
+  
     
     
