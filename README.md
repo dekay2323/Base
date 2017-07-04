@@ -1,9 +1,13 @@
 # Base
-Base Grails 3 Project for quickly starting projects
+* Base Grails 3 Project for quickly starting projects.
+* Has Spring Security, Bootstrap 4, vue.js
+* All Grails functonality plus Vue can call Grails Rest Domains
+* Includes examples
 
-Demian Krige
-
-dekay.2323@gmail.com
+## Contact
+* Demian Krige
+* dekay.2323@gmail.com
+* Contributors welcome
 
 ## Plugins
 * Hibernate
@@ -21,6 +25,7 @@ dekay.2323@gmail.com
   * Scaffolds overloaded
 
 ## Examples
+Have a look at these classes to see how things are done.
 * Users
   * **Role.groovy**, **User.groovy**, **UserRole.groovy** domain
   * Bootstrapped User (user/user) **BootStrap.groovy**
