@@ -11,8 +11,14 @@ dekay.2323@gmail.com
 * H2 (in memory or file)
 * Spring Security, annotations
 * Mail
-* Bootstrap 4 http://bootstrap4.guide/
-* Vue.js instead of JQuery https://bootstrap-vue.js.org/docs
+* Bootstrap 4 
+  * http://bootstrap4.guide/
+* Vue.js instead of JQuery 
+  * https://bootstrap-vue.js.org/docs
+* Field 
+  * https://github.com/grails-fields-plugin/grails-fields
+  * With overwrites for Bootstrap 4 and vue.js
+  * Scaffolds overloaded
 
 ## Examples
 * Users
