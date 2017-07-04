@@ -19,8 +19,8 @@
             <b-collapse is-nav id="nav_collapse">
     
                 <b-nav is-nav-bar>
-                    <b-nav-item>Account</b-nav-item>
-                    <b-nav-item>Entry</b-nav-item>
+                    <b-nav-item href="/account/index">Account</b-nav-item>
+                    <b-nav-item href="/account/entry">Entry</b-nav-item>
                 </b-nav>
     
                 <b-nav is-nav-bar class="ml-auto">

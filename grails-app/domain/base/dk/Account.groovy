@@ -1,5 +1,8 @@
 package base.dk
 
+import grails.rest.Resource
+
+@Resource(uri='/books', formats=['json'])
 class Account {
     String name
     String description

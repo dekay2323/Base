@@ -1,11 +1,11 @@
-<%=packageName ? "package ${packageName}" : ''%>
+package base.dk
 
 import grails.test.mixin.*
 import spock.lang.*
 
-@TestFor(${className}Controller)
-@Mock(${className})
-class ${className}ControllerSpec extends Specification {
+@TestFor(EntryController)
+@Mock(Entry)
+class EntryControllerSpec extends Specification {
 
     def populateValidParams(params) {
         assert params != null
@@ -21,8 +21,8 @@ class ${className}ControllerSpec extends Specification {
             controller.index()
 
         then:"The model is correct"
-            !model.${modelName}List
-            model.${modelName}Count == 0
+            !model.entryList
+            model.entryCount == 0
     }
 
     void "Test the create action returns the correct model"() {
@@ -30,7 +30,7 @@ class ${className}ControllerSpec extends Specification {
             controller.create()
 
         then:"The model is correctly created"
-            model.${modelName}!= null
+            model.entry!= null
     }
 
     void "Test the save action correctly persists an instance"() {
@@ -38,25 +38,25 @@ class ${className}ControllerSpec extends Specification {
         when:"The save action is executed with an invalid instance"
             request.contentType = FORM_CONTENT_TYPE
             request.method = 'POST'
-            def ${propertyName} = new ${className}()
-            ${propertyName}.validate()
-            controller.save(${propertyName})
+            def entry = new Entry()
+            entry.validate()
+            controller.save(entry)
 
         then:"The create view is rendered again with the correct model"
-            model.${modelName}!= null
+            model.entry!= null
             view == 'create'
 
         when:"The save action is executed with a valid instance"
             response.reset()
             populateValidParams(params)
-            ${propertyName} = new ${className}(params)
+            entry = new Entry(params)
 
-            controller.save(${propertyName})
+            controller.save(entry)
 
         then:"A redirect is issued to the show action"
-            response.redirectedUrl == '/${propertyName}/show/1'
+            response.redirectedUrl == '/entry/show/1'
             controller.flash.message != null
-            ${className}.count() == 1
+            Entry.count() == 1
     }
 
     void "Test that the show action returns the correct model"() {
@@ -68,11 +68,11 @@ class ${className}ControllerSpec extends Specification {
 
         when:"A domain instance is passed to the show action"
             populateValidParams(params)
-            def ${propertyName} = new ${className}(params)
-            controller.show(${propertyName})
+            def entry = new Entry(params)
+            controller.show(entry)
 
         then:"A model is populated containing the domain instance"
-            model.${modelName} == ${propertyName}
+            model.entry == entry
     }
 
     void "Test that the edit action returns the correct model"() {
@@ -84,11 +84,11 @@ class ${className}ControllerSpec extends Specification {
 
         when:"A domain instance is passed to the edit action"
             populateValidParams(params)
-            def ${propertyName} = new ${className}(params)
-            controller.edit(${propertyName})
+            def entry = new Entry(params)
+            controller.edit(entry)
 
         then:"A model is populated containing the domain instance"
-            model.${modelName} == ${propertyName}
+            model.entry == entry
     }
 
     void "Test the update action performs an update on a valid domain instance"() {
@@ -98,28 +98,28 @@ class ${className}ControllerSpec extends Specification {
             controller.update(null)
 
         then:"A 404 error is returned"
-            response.redirectedUrl == '/${propertyName}/index'
+            response.redirectedUrl == '/entry/index'
             flash.message != null
 
         when:"An invalid domain instance is passed to the update action"
             response.reset()
-            def ${propertyName} = new ${className}()
-            ${propertyName}.validate()
-            controller.update(${propertyName})
+            def entry = new Entry()
+            entry.validate()
+            controller.update(entry)
 
         then:"The edit view is rendered again with the invalid instance"
             view == 'edit'
-            model.${modelName} == ${propertyName}
+            model.entry == entry
 
         when:"A valid domain instance is passed to the update action"
             response.reset()
             populateValidParams(params)
-            ${propertyName} = new ${className}(params).save(flush: true)
-            controller.update(${propertyName})
+            entry = new Entry(params).save(flush: true)
+            controller.update(entry)
 
         then:"A redirect is issued to the show action"
-            ${propertyName} != null
-            response.redirectedUrl == "/${propertyName}/show/\$${propertyName}.id"
+            entry != null
+            response.redirectedUrl == "/entry/show/$entry.id"
             flash.message != null
     }
 
@@ -130,23 +130,23 @@ class ${className}ControllerSpec extends Specification {
             controller.delete(null)
 
         then:"A 404 is returned"
-            response.redirectedUrl == '/${propertyName}/index'
+            response.redirectedUrl == '/entry/index'
             flash.message != null
 
         when:"A domain instance is created"
             response.reset()
             populateValidParams(params)
-            def ${propertyName} = new ${className}(params).save(flush: true)
+            def entry = new Entry(params).save(flush: true)
 
         then:"It exists"
-            ${className}.count() == 1
+            Entry.count() == 1
 
         when:"The domain instance is passed to the delete action"
-            controller.delete(${propertyName})
+            controller.delete(entry)
 
         then:"The instance is deleted"
-            ${className}.count() == 0
-            response.redirectedUrl == '/${propertyName}/index'
+            Entry.count() == 0
+            response.redirectedUrl == '/entry/index'
             flash.message != null
     }
 }

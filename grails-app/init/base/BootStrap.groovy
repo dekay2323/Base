@@ -19,7 +19,7 @@ class BootStrap {
                 user: admin,
                 role: adminRole).save(failOnError: true)
 
-        User user = User.findByUsername('user1') ?: new User(
+        User user = User.findByUsername('user') ?: new User(
                 username: 'user',
                 email: 'dekay.2323@gmail.com',
                 password: 'user',
