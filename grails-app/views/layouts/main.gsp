@@ -18,6 +18,8 @@
     <script src="//unpkg.com/tether@latest/dist/js/tether.min.js"></script>
     <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <g:layoutHead/>
 </head>
 <body>
