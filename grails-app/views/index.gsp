@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Welcome to Grails</title>
+    <title>Base</title>
 
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
 </head>
@@ -13,15 +13,14 @@
             <b-nav-toggle target="nav_collapse"></b-nav-toggle>
     
             <b-link class="navbar-brand" to="#">
-                <span>BootstrapVue</span>
+                <span>Base</span>
             </b-link>
     
             <b-collapse is-nav id="nav_collapse">
     
                 <b-nav is-nav-bar>
-                    <b-nav-item>Support</b-nav-item>
-                    <b-nav-item>Docs</b-nav-item>
-                    <b-nav-item>Contact Us</b-nav-item>
+                    <b-nav-item>Author</b-nav-item>
+                    <b-nav-item>Book</b-nav-item>
                 </b-nav>
     
                 <b-nav is-nav-bar class="ml-auto">
@@ -48,9 +47,11 @@
                 </b-nav>
             </b-collapse>
         </b-navbar>
-    
-        <h1>Vue Test</h1>
-        {{ message }}
+
+        <div class="container">
+            <h1>Vue Test</h1>
+            {{ message }}
+        </div>
     </div>
 </body>
 </html>

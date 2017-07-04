@@ -10,7 +10,7 @@ dekay.2323@gmail.com
 * MySql
 * Spring Security, annotations
 * Mail
-* Bootstrap 4
+* Bootstrap 4 http://bootstrap4.guide/
 * Vue.js instead of JQuery https://bootstrap-vue.js.org/docs
 
 ## Examples
