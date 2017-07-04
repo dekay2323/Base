@@ -8,4 +8,9 @@ class Author {
     static constraints = {
         name nullable: false, blank: false
     }
+    
+    @Override
+    public String toString() {
+        "${name}"
+    }
 }

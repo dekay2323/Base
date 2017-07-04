@@ -79,4 +79,9 @@ class UserRole implements Serializable {
 		id composite: ['user', 'role']
 		version false
 	}
+
+	@Override
+	public String toString() {
+		"${user} : ${role}"
+	}
 }

@@ -8,4 +8,9 @@ class Book {
         name nullable: false, blank: false
         name nullable: true, blank: true
     }
+
+    @Override
+    public String toString() {
+        "${name}"
+    }
 }

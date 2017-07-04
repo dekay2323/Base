@@ -46,4 +46,9 @@ class User implements Serializable {
 	static mapping = {
 		password column: '`password`'
 	}
+
+	@Override
+	public String toString() {
+		"${username}"
+	}
 }
