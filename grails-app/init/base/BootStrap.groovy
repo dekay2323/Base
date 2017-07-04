@@ -1,5 +1,6 @@
 package base
 
+import base.dk.Account
 import base.dk.Role
 import base.dk.User
 import base.dk.UserRole
@@ -27,6 +28,11 @@ class BootStrap {
         UserRole.findByUser(user) ?: new UserRole(
                 user: user,
                 role: userRole).save(failOnError: true)
+        
+        Account.findByName('CryptoCoins') ?: 
+                new Account(name: 'CryptoCoins').save(failOnError: true)
+        Account.findByName('Stocks') ?:
+                new Account(name: 'Stocks').save(failOnError: true)
     }
     
     def destroy = {
