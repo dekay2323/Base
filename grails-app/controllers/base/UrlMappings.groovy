@@ -9,9 +9,6 @@ class UrlMappings {
             }
         }
         
-        "/api/accounts"(resources:"account")
-        "/api/entries"(resources:"entry")
-        
         "/"(view:"/index")
         "500"(view:'/error')
         "404"(view:'/notFound')
