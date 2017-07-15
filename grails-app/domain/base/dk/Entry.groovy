@@ -2,7 +2,6 @@ package base.dk
 
 import grails.rest.Resource
 
-@Resource(uri='/entry', formats=['json'])
 class Entry {
     String property
     Date datePurchased

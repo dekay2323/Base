@@ -9,8 +9,8 @@ class UrlMappings {
             }
         }
         
-        "/account"(resources:"Account")
-        //"/entries"(resources:"Entry")
+        "/api/accounts"(resources:"account")
+        "/api/entries"(resources:"entry")
         
         "/"(view:"/index")
         "500"(view:'/error')
