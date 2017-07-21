@@ -1,40 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="layout" content="main" />
-        <g:set var="entityName" value="\${message(code: '${propertyName}.label', default: '${className}')}" />
-        <title><g:message code="default.edit.label" args="[entityName]" /></title>
-    </head>
-    <body>
-        <a href="#edit-${propertyName}" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
+<head>
+    <meta name="layout" content="main" />
+    <g:set var="entityName" value="\${message(code: '${propertyName}.label', default: '${className}')}" />
+    <title></title>
+</head>
+<body>
+%{-- NAV--}%
+<ul class="nav">
+    <li class="nav-item active">
+        <g:link class="nav-link" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link>
+    </li>
+    <li class="nav-item">
+        <g:link class="nav-link" action="create"><g:message code="default.add.label" args="[entityName]" /></g:link>
+    </li>
+</ul>
+
+%{-- CONTAINER--}%
+<div class="container" role="main">
+    <div class="row">
+        <div class="col">
+            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
         </div>
-        <div id="edit-${propertyName}" class="content scaffold-edit" role="main">
-            <h1><g:message code="default.edit.label" args="[entityName]" /></h1>
+    </div>
+    <div class="row">
+        <div class="col">
             <g:if test="\${flash.message}">
-            <div class="message" role="status">\${flash.message}</div>
+                <div class="alert alert-danger" role="alert">
+                    <div class="message" role="status">\${flash.message}</div>
+                </div>
             </g:if>
-            <g:hasErrors bean="\${this.${propertyName}}">
-            <ul class="errors" role="alert">
-                <g:eachError bean="\${this.${propertyName}}" var="error">
-                <li <g:if test="\${error in org.springframework.validation.FieldError}">data-field-id="\${error.field}"</g:if>><g:message error="\${error}"/></li>
-                </g:eachError>
-            </ul>
-            </g:hasErrors>
-            <g:form resource="\${this.${propertyName}}" method="PUT">
-                <g:hiddenField name="version" value="\${this.${propertyName}?.version}" />
-                <fieldset class="form">
-                    <f:all bean="${propertyName}"/>
-                </fieldset>
-                <fieldset class="buttons">
-                    <input class="save" type="submit" value="\${message(code: 'default.button.update.label', default: 'Update')}" />
-                </fieldset>
-            </g:form>
         </div>
-    </body>
+    </div>
+    <div class="row">
+        <div class="col">
+            <g:hasErrors bean="\${this.${propertyName}}">
+                <ul class="errors" role="alert">
+                    <g:eachError bean="\${this.${propertyName}}" var="error">
+                        <li <g:if test="\${error in org.springframework.validation.FieldError}">data-field-id="\${error.field}"</g:if>><g:message error="\${error}"/></li>
+                    </g:eachError>
+                </ul>
+            </g:hasErrors>
+        </div>
+    </div>
+
+    %{-- FORM --}%
+    <g:form resource="\${this.${propertyName}}" method="PUT">
+        <g:hiddenField name="version" value="\${this.${propertyName}?.version}" />
+        <fieldset class="form">
+            <f:all bean="${propertyName}"/>
+        </fieldset>
+        <fieldset class="buttons">
+            <input class="save" type="submit" value="\${message(code: 'default.button.update.label', default: 'Update')}" />
+        </fieldset>
+    </g:form>
+</div>
+</body>
 </html>
+
+
