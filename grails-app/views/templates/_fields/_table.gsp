@@ -1,5 +1,5 @@
-<div class="dataTable_wrapper">
-    <table class="table table-bordered table-hover dataTable" width="100%">
+<div>
+    <table class="table table-bordered table-hover table-striped" width="100%">
         <thead>
         <tr>
             <g:each in="${domainProperties}" var="p" status="i">
@@ -10,7 +10,7 @@
         </thead>
         <tbody>
         <g:each in="${collection}" var="bean" status="i">
-            <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+            <tr>
                 <g:each in="${domainProperties}" var="p" status="j">
                     <g:if test="${j==0}">
                         <td><g:link method="GET" resource="${bean}"><f:display bean="${bean}" property="${p.name}" displayStyle="${displayStyle?:'table'}" /></g:link></td>
